@@ -1,0 +1,18 @@
+buildscript {
+  repositories {
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+  }
+
+  dependencies {
+    classpath 'org.akhikhl.gretty:gretty:+'
+  }
+}
+
+repositories {
+  maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+  maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+}
+
+if (!project.plugins.findPlugin(org.akhikhl.gretty.GrettyPlugin))
+  project.apply(plugin: org.akhikhl.gretty.GrettyPlugin)

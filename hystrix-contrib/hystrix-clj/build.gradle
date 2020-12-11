@@ -1,10 +1,13 @@
 buildscript {
     repositories {
-        jcenter()
-        maven{
-          name 'clojars'
-          url 'http://clojars.org/repo'
-        }
+//        jcenter()
+//        maven{
+//          name 'clojars'
+//          url 'http://clojars.org/repo'
+//        }
+
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
     }
     dependencies {
         classpath 'com.netflix.nebula:nebula-clojure-plugin:4.0.1'
@@ -13,8 +16,11 @@ buildscript {
 apply plugin: 'nebula.clojure' // this is a wrapper around clojuresque to make it behave well with other plugins
 
 repositories {
-    mavenCentral()
-    clojarsRepo()
+//    mavenCentral()
+//    clojarsRepo()
+
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
 }
 
 dependencies {
